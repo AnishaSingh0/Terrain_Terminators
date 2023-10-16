@@ -1,0 +1,20 @@
+current directory: /Users/ani/Projects/MakersBootcamp/final_project/Terrain_Terminators/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+/Users/ani/.rvm/rubies/ruby-3.2.1/bin/ruby -I /Users/ani/.rvm/rubies/ruby-3.2.1/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Users/ani/Projects/MakersBootcamp/final_project/Terrain_Terminators/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231016-42872-td3md7 sitelibdir\=./.gem.20231016-42872-td3md7 clean
+
+current directory: /Users/ani/Projects/MakersBootcamp/final_project/Terrain_Terminators/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231016-42872-td3md7 sitelibdir\=./.gem.20231016-42872-td3md7
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: -multiply_defined is obsolete
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/ani/Projects/MakersBootcamp/final_project/Terrain_Terminators/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231016-42872-td3md7 sitelibdir\=./.gem.20231016-42872-td3md7 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20231016-42872-td3md7/bootsnap
+
+current directory: /Users/ani/Projects/MakersBootcamp/final_project/Terrain_Terminators/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20231016-42872-td3md7 sitelibdir\=./.gem.20231016-42872-td3md7 clean
