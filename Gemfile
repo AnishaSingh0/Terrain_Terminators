@@ -72,3 +72,5 @@ gem "rspec-rails", "~> 6.0"
 gem "webpacker", "~> 5.4"
 
 gem "pg"
+
+gem 'simplecov', require: false, group: :test
