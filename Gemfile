@@ -71,4 +71,4 @@ gem "rspec-rails", "~> 6.0"
 
 gem "webpacker", "~> 5.4"
 
-gem "pg", "~> 15"
+gem "pg"
