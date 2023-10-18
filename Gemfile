@@ -80,5 +80,5 @@ gem 'devise'
 
 gem 'simplecov', require: false, group: :test
 
+gem 'jquery-rails'
 gem 'sass-rails'
-
