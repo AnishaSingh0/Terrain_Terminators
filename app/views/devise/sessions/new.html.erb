@@ -1,26 +1,60 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css.scss" />
+  </head>
+  <body>
+    <div class="macbook-pro">
+      <div class="frame-wrapper">
+        <div class="frame">
+          <div class="overlap-group-wrapper">
+            <div class="overlap-group">
+              <div class="rectangle"></div>
+              <div class="terrain-terminator">TERRAIN TERMINATOR</div>
+              <div class="div">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+                <div class="rectangle-2">
+                  <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  </div>
+                </div>
+                
+                <div class="rectangle-2">
+                  <div class="field">
+                  <%= f.label :password %><br />
+                  <%= f.password_field :password, autocomplete: "current-password" %>
+                  </div>
+                </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+                <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+
+              <div class="actions">
+              <%= f.submit "Log in" %>
+              </div>
+
+              <p class="error-messages">
+                <%= render "devise/shared/error_messages", resource: resource %>
+               </p>
+              <% end %>
+                
+              </div>
+              
+              <p class="p">CLICK HERE TO CREATE ACCOUNT <%= render "devise/shared/links" %> </p>
+              <%= image_tag "terrain-terminator-logos-white-1-1.png", class:"img"%>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  </body>
+</html>
