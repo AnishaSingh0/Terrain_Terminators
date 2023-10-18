@@ -80,4 +80,7 @@ gem 'devise'
 
 gem 'simplecov', require: false, group: :test
 
+gem 'sass-rails'
+
 gem 'jquery-rails'
+gem 'sass-rails'
