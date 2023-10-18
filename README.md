@@ -6,6 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+run 'bundle install' to install all dependecies from the gem file.
 
 * System dependencies
 

@@ -74,4 +74,8 @@ gem "webpacker", "~> 5.4"
 
 gem "pg"
 
+
 gem 'devise'
+
+gem 'simplecov', require: false, group: :test
+
