@@ -80,3 +80,5 @@ gem 'devise'
 
 gem 'simplecov', require: false, group: :test
 
+gem 'httparty'
+gem 'base64'
