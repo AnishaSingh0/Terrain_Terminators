@@ -1,0 +1,9 @@
+<!-- app/views/map_squares/show.html.erb -->
+<p>Longitude: <%= @square.lng %></p>
+<p>Latitude: <%= @square.lat %></p>
+<p>Three words: <%= @three_words%></p>
+<% if @image_path.present? %>
+  <%= image_tag @image_path, alt: "…", width: "200", height: "200", loading: "lazy" %>
+<% else %>
+  <p>Image loading...</p>
+<% end %>
