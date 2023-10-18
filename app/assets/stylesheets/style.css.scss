@@ -1,0 +1,227 @@
+.macbook-pro {
+  background-color: #16031c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.macbook-pro .frame-wrapper {
+  background-color: #16031c;
+  width: 1512px;
+  height: 982px;
+}
+
+.macbook-pro .frame {
+  position: relative;
+  height: 982px;
+  background-image: url(asset-path('rectangle-4.png'));
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.macbook-pro .overlap-group-wrapper {
+  position: absolute;
+  width: 500px;
+  height: 700px;
+  top: 141px;
+  left: 506px;
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.macbook-pro .overlap-group {
+  position: relative;
+  height: 680px;
+  top: 10px;
+}
+
+.macbook-pro .rectangle {
+  position: absolute;
+  width: 480px;
+  height: 680px;
+  top: 0;
+  left: 10px;
+  background-color: #16031c;
+  border-radius: 20px;
+  border: 5px solid;
+  border-color: #97b032;
+  filter: blur(4px);
+}
+
+.macbook-pro .sign-up {
+  position: absolute;
+  width: 209px;
+  top: 524px;
+  left: 145px;
+  font-family: "Roboto Condensed", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 52px;
+  white-space: nowrap;
+}
+
+.macbook-pro .terrain-terminator {
+  position: absolute;
+  width: 500px;
+  top: 13px;
+  left: 0;
+  font-family: "Alegreya Sans", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 38px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 58.5px;
+  white-space: nowrap;
+}
+
+.macbook-pro .div {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+  position: absolute;
+  top: 237px;
+  left: 93px;
+}
+
+.macbook-pro .rectangle-2 {
+  position: relative;
+  width: 313px;
+  height: 56px;
+  background-color: #811cb133;
+  border-radius: 20px;
+  border: 5px solid;
+  border-color: #97b032;
+  // filter: blur(4px);
+}
+
+.macbook-pro .error-messages {
+  position: absolute;
+  width: 480px;
+  top: 581px;
+  left: 10px;
+  font-family: "Roboto Condensed-Regular", Helvetica;
+  font-weight: 400;
+  // color: transparent;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.macbook-pro .text-wrapper {
+  color: #f9133d;
+}
+
+.macbook-pro .span {
+  color: #ffffff;
+}
+
+.macbook-pro .p {
+  position: absolute;
+  width: 351px;
+  top: 644px;
+  left: 80px;
+  font-family: "Roboto Condensed-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.macbook-pro .img {
+  position: absolute;
+  width: 209px;
+  height: 113px;
+  top: 97px;
+  left: 145px;
+  object-fit: cover;
+}
+
+.macbook-pro .overlap-wrapper {
+  position: absolute;
+  width: 367px;
+  height: 435px;
+  top: 281px;
+  left: 60px;
+}
+
+.macbook-pro .overlap {
+  position: relative;
+  width: 299px;
+  height: 400px;
+  top: 14px;
+  left: 33px;
+  background-color: #16031c;
+  border-radius: 20px;
+  border: 5px solid;
+  border-color: #97b032;
+  filter: blur(4px);
+}
+
+.macbook-pro .frame-2 {
+  position: relative;
+  width: 271px;
+  height: 375px;
+  top: 6px;
+  left: 7px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.macbook-pro .overlap-group-2 {
+  position: absolute;
+  width: 299px;
+  height: 349px;
+  top: 25px;
+  left: -12px;
+}
+
+.macbook-pro .you-re-a-powerful {
+  position: absolute;
+  width: 265px;
+  top: 42px;
+  left: 18px;
+  font-family: "Lexend Zetta", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15.6px;
+}
+
+.macbook-pro .text-wrapper-2 {
+  position: absolute;
+  width: 299px;
+  top: 0;
+  left: 0;
+  font-family: "Libre Barcode 39 Extended Text", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 39px;
+}
+
+.macbook-pro .welcome-commander {
+  position: absolute;
+  width: 265px;
+  top: 4px;
+  left: 6px;
+  font-family: "Lexend Zetta", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15.6px;
+}

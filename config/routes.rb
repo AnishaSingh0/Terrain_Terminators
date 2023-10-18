@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  get 'errors/not_found'
+  unauthenticated do
+    root to: 'home#index_logged_out', as: :unauthenticated_root
+  end
+
+
+  authenticated :user do
+    root to: 'game#index', as: :authenticated_root
+  end
+
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,9 +21,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  #Set the game page as the root route
+  root 'game#index'
+
  devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new'
-    get "sign_up" => "devise/registrations#new" # 
+    get "sign_up" => "devise/registrations#new" 
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
 end
