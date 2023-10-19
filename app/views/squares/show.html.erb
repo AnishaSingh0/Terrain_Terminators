@@ -7,3 +7,18 @@
 <% else %>
   <p>Image loading...</p>
 <% end %>
+<%= form_tag do %>
+  <%= text_field_tag :word1, nil, class: 'custom-text-field' %>
+  <%= text_field_tag :word2, nil, class: 'custom-text-field' %>
+  <%= text_field_tag :word3, nil, class: 'custom-text-field' %>
+  <%= submit_tag 'Submit' %>
+<% end %>
+</body>
+<style>
+  .custom-text-field {
+    background-color: black !important;
+    color: white !important;
+    border: none !important;
+    padding: 5px !important;
+  }
+</style>

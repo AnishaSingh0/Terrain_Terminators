@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   #Set the game page as the root route
   root 'game#index'
 
+  # post '/regenerate_image', to: 'squares#regenerate_image'
+
  devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new'
     get "sign_up" => "devise/registrations#new" 

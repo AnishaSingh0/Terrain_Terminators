@@ -57,5 +57,20 @@ module SquaresHelper
     "squares/output_image.jpg"
   end
 
-
+  def words_logic(words)
+    words_array = words.split(' ')
+    user_guesses = [params[:word1], params[:word2], params[:word3]].compact
+    for word in words_array
+      if word in user_guesses
+        words_array -= word
+      end
+    end
+    if words_array == []
+      p "Destruction Complete!"
+      # here a logic for redirection to the squares' page
+    else
+      remaining_words = words_array.join(' ')
+      new_image = generate_image(remaining_words)
+    end
+  end
 end

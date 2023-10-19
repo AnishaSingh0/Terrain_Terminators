@@ -14,13 +14,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_18_124340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "map_squares", force: :cascade do |t|
-    t.float "lng"
-    t.float "lat"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "squares", force: :cascade do |t|
     t.float "lng"
     t.float "lat"
