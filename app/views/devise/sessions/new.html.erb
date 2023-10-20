@@ -14,22 +14,18 @@
             <div class="overlap-group">
               <div class="rectangle"></div>
               <div class="terrain-terminator">TERRAIN TERMINATOR</div>
-              <div class="div">
+              
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-                <div class="rectangle-2">
-                  <div class="field">
-                  <%= f.label :email %><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-                  </div>
-                </div>
+                <div class="div"> 
+                <%= f.label :email, class: "label" %>
                 
-                <div class="rectangle-2">
-                  <div class="field">
-                  <%= f.label :password %><br />
-                  <%= f.password_field :password, autocomplete: "current-password" %>
-                  </div>
-                </div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rectangle-2"%>
+
+              <%= f.label :password, class: "label"%>
+                    <%= f.password_field :password, autocomplete: "new-password" , class: "rectangle-2"%>
+
+                
+              
 
                 <% if devise_mapping.rememberable? %>
                 <div class="field">
@@ -38,9 +34,10 @@
                 </div>
               <% end %>
 
-              <div class="actions">
-              <%= f.submit "Log in" %>
-              </div>
+               <div class="sign-up-container">
+                    <%= f.submit "Login", class:"sign-up" %>
+               </div>
+              <%= render "devise/shared/links" %> 
 
               <p class="error-messages">
                 <%= render "devise/shared/error_messages", resource: resource %>
@@ -49,7 +46,7 @@
                 
               </div>
               
-              <p class="p">CLICK HERE TO CREATE ACCOUNT <%= render "devise/shared/links" %> </p>
+               
               <%= image_tag "terrain-terminator-logos-white-1-1.png", class:"img"%>
             </div>
           </div>
