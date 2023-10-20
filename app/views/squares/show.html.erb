@@ -2,10 +2,8 @@
 <p>Longitude: <%= @square.lng %></p>
 <p>Latitude: <%= @square.lat %></p>
 <p>Three words: <%= @square.words%></p>
-<% if @image_path.present? %>
-  <%= image_tag @image_path, alt: "…", width: "200", height: "200", loading: "lazy" %>
-<% else %>
-  <p>Image loading...</p>
+<% if @square.image_url.present? %>
+  <%= image_tag @square.image_url, alt: "…", width: "200", height: "200", loading: "lazy" %>
 <% end %>
 
 <%= form_tag do %>
@@ -13,7 +11,7 @@
   <%= submit_tag 'Submit', id: 'submit-button' %>
 <% end %>
 
-<p> </p>
+<p><%= @message %></p>
 
 
 <% if flash.now[:alert] %>
