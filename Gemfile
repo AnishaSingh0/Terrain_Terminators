@@ -75,7 +75,8 @@ gem "webpacker", "~> 5.4"
 # We are usuing postgres instead of sqlite3
 gem "pg"
 
-
+# after every line of gem added, 
+# remember to run 'bundle install/update' !!!
 gem 'devise'
 
 gem 'simplecov', require: false, group: :test
@@ -87,3 +88,9 @@ gem 'base64'
 gem 'jquery-rails'
 gem 'sass-rails'
 
+# Factory Bot is often used in testing environments to create test data
+# for Rails application, making it easier to write and maintain test cases. 
+# It's not a required component of Rails, 
+# but it's a valuable tool for testing."
+
+gem 'factory_bot_rails' 
