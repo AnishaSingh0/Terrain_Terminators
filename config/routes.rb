@@ -23,8 +23,10 @@ Rails.application.routes.draw do
 
   #Set the game page as the root route
   root 'game#index'
+  get "game" => "game#index"
 
-  # post '/regenerate_image', to: 'squares#regenerate_image'
+  post 'squares/:id/', to: 'squares#squares_words_logic', as: 'squares_words_logic'
+  # post 'squares/:id/' => "squares#show"
 
  devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new'

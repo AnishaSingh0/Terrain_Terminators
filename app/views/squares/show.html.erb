@@ -1,19 +1,57 @@
 <!-- app/views/map_squares/show.html.erb -->
 <p>Longitude: <%= @square.lng %></p>
 <p>Latitude: <%= @square.lat %></p>
-<p>Three words: <%= @three_words%></p>
+<p>Three words: <%= @square.words%></p>
 <% if @image_path.present? %>
   <%= image_tag @image_path, alt: "…", width: "200", height: "200", loading: "lazy" %>
 <% else %>
   <p>Image loading...</p>
 <% end %>
+
 <%= form_tag do %>
-  <%= text_field_tag :word1, nil, class: 'custom-text-field' %>
-  <%= text_field_tag :word2, nil, class: 'custom-text-field' %>
-  <%= text_field_tag :word3, nil, class: 'custom-text-field' %>
-  <%= submit_tag 'Submit' %>
+  <%= text_field_tag :words, nil, class: 'custom-text-field' %>
+  <%= submit_tag 'Submit', id: 'submit-button' %>
 <% end %>
-</body>
+
+<p> </p>
+
+
+<% if flash.now[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash.now[:alert] %>
+  </div>
+<% elsif flash.now[:success] %>
+  <div class="alert alert-success">
+    <%= flash.now[:success] %>
+  </div>
+<% end %>
+
+<script>
+  $(document).on('ready turbolinks:load', function () {
+    $('#submit-button').on('click', function (e) {
+      e.preventDefault();
+
+      var formData = {
+        word1: $('#words').val()
+
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '<%= squares_words_logic_path(@square) %>',
+        data: formData,
+        success: function(data) {
+          // Update the image on the page
+          $('#image-display').attr('src', data.image_path);
+        },
+        error: function() {
+          alert('Error updating image.');
+        }
+      });
+    });
+  });
+</script>
+
 <style>
   .custom-text-field {
     background-color: black !important;

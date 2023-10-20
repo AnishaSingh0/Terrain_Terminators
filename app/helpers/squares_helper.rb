@@ -11,12 +11,13 @@ module SquaresHelper
         
         if response.success?
           json_response = JSON.parse(response.body)
+          p "JSON Response: #{json_response['words']}" 
           json_response['words']
         else
           # Handle error, maybe raise an exception or return an error message
           'Error fetching 3-word address'
         end
-      end
+    end
 
 
       # app/helpers/image_generator_helper.rb
@@ -50,27 +51,42 @@ module SquaresHelper
    # Save the image to the specified file path
    File.open(file_path, 'wb') do |f|
      f.write(image_data)
-   end
+    end
 
 
     # Return the path to the saved image file
     "squares/output_image.jpg"
   end
 
-  def words_logic(words)
-    words_array = words.split(' ')
-    user_guesses = [params[:word1], params[:word2], params[:word3]].compact
-    for word in words_array
-      if word in user_guesses
-        words_array -= word
-      end
-    end
-    if words_array == []
-      p "Destruction Complete!"
-      # here a logic for redirection to the squares' page
-    else
-      remaining_words = words_array.join(' ')
-      new_image = generate_image(remaining_words)
-    end
-  end
+  # def words_logic(words)
+  #   p(words)
+  #   words_array = words.split('.')
+  #   user_guesses = [params[:word1], params[:word2], params[:word3]].compact
+  #   for word in words_array
+  #     if word in user_guesses
+  #       words_array -= word
+  #     end
+  #   end
+  #   if words_array == []
+  #     p "Destruction Complete!"
+  #     # here a logic for redirection to the squares' page
+  #   else
+  #     remaining_words = words_array.join(' ')
+  #     new_image = generate_image(remaining_words)
+  #   end
+  # end
+  def get_remaining_words(square_words)
+    square_words_array = square_words.split(' ')
+    user_guesses_array = params[:words].split(' ')
+    remaining_words = square_words_array - user_guesses_array
+    return remaining_words.join(' ') 
+  end 
+
+
+
+
+
+
+ 
+
 end

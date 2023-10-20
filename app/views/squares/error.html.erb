@@ -1,0 +1,13 @@
+<div id="error-popup">
+  <p><%= flash[:error] %></p>
+</div>
+
+<script>
+  // JavaScript to close the error pop-up after 4 seconds
+  setTimeout(function() {
+    var errorPopup = document.getElementById('error-popup');
+    if (errorPopup) {
+      errorPopup.style.display = 'none';
+    }
+  }, 4000); // 4 seconds (4000 milliseconds)
+</script>
