@@ -50,17 +50,14 @@
 }
 
 .macbook-pro .sign-up {
-  position: absolute;
-  width: 209px;
-  top: 524px;
-  left: 145px;
+
   font-family: "Roboto Condensed", Helvetica;
   font-weight: 500;
+  background-color: transparent;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 20px;
   text-align: center;
   letter-spacing: 0;
-  line-height: 52px;
   white-space: nowrap;
 }
 
@@ -83,16 +80,18 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 17px;
+  gap: 10px;
   position: absolute;
-  top: 237px;
+  top: 180px;
   left: 93px;
 }
 
 .macbook-pro .rectangle-2 {
+  
   position: relative;
+  color: white;
   width: 313px;
-  height: 56px;
+  height: 46px;
   background-color: #811cb133;
   border-radius: 20px;
   border: 5px solid;
@@ -101,18 +100,7 @@
 }
 
 .macbook-pro .error-messages {
-  position: absolute;
-  width: 480px;
-  top: 581px;
-  left: 10px;
-  font-family: "Roboto Condensed-Regular", Helvetica;
-  font-weight: 400;
-  // color: transparent;
-  font-size: 20px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: 26px;
-  white-space: nowrap;
+  color: red;
 }
 
 .macbook-pro .text-wrapper {
@@ -142,9 +130,15 @@
   position: absolute;
   width: 209px;
   height: 113px;
-  top: 97px;
+  top: 70px;
   left: 145px;
   object-fit: cover;
+}
+
+.macbook-pro .sign-up-container {
+  width: 313px;
+  height: 46px;
+  text-align: center;
 }
 
 .macbook-pro .overlap-wrapper {
@@ -224,4 +218,9 @@
   font-size: 12px;
   letter-spacing: 0;
   line-height: 15.6px;
+}
+
+.macbook-pro .label{
+  color: white;
+
 }
