@@ -38,6 +38,7 @@
                     <div class="sign-up-container">
                     <%= f.submit "Sign up", class:"sign-up" %>
                     </div>
+                  <%= render "devise/shared/links" %>
 
               <p class="error-messages">
                 <%= render "devise/shared/error_messages", resource: resource %>
@@ -47,7 +48,7 @@
                 
               
               
-              <p class="p">CLICK HERE TO CREATE ACCOUNT <%= render "devise/shared/links" %> </p>
+              
               <%= image_tag "terrain-terminator-logos-white-1-1.png", class:"img"%>
             </div>
           </div>
