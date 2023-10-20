@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
+  get 'users/edit'
+  get 'users/update'
 
   get 'errors/not_found'
   unauthenticated do
