@@ -47,53 +47,12 @@
                           <%= image_tag "map_page/line-5.svg", class:"map-line-4"%>
                           <div class="map-frame-6">
 
-                            <a href="squares/1">
-                              <div class="map-square_top_left"></div> 
-                            </a>
+                            <% @user_squares.each_with_index do |square, index| %>
+  <a href="/squares/<%= square.id %>">
+    <div class="map-square<%= "_top_left" if index == 0 %><%= "_top_right" if index == 3 %><%= "_bottom_left" if index == 8 %><%= "_bottom_right" if index == 11 %>"></div>
+  </a>
+<% end %>
 
-                            <a href="squares/2">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/3">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/4">
-                            <div class="map-square_top_right"></div>
-                            </a>
-
-                            <a href="squares/5">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/6">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/7">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/8">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/9">
-                            <div class="map-square_bottom_left"></div>
-                            </a>
-
-                            <a href="squares/10">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/11">
-                              <div class="map-square"></div> 
-                            </a>
-
-                            <a href="squares/12">
-                              <div class="map-square_bottom_right"></div>
-                            </a>
 
                           </div>
                         </div>
