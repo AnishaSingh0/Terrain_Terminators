@@ -88,9 +88,27 @@ module SquaresHelper
     return remaining_words.join(' ') 
   end 
 
-  def covered_words(words)
-    words.split(' ').map { |word| '*' * (word.length) }.join(' ')
+  # def covered_words(words)
+  #   words.split(' ').map { |word| '*' * (word.length) }.join(' ')
+  # end
+
+  def get_display_words(remaining_words, square_words)
+    square_words_array = square_words.split
+    remaining_words_array = remaining_words.split
+  
+    # Replace words in square_words with asterisks if they exist in remaining_words
+    result = square_words_array.map do |word|
+      if remaining_words_array.include?(word)
+        '*' * word.length
+      else
+        word
+      end
+    end 
+    
+  
+    result.join(' ')
   end
+
 
   # def uncovered_words(covered_words, square_words)
   #   covered_words_array = covered_words.split(' ')
