@@ -1,5 +1,6 @@
 class SquaresController < ApplicationController
-    include SquaresHelper
+  before_action :authenticate_user! 
+  include SquaresHelper
 
     def show
         @square = Square.find(params[:id])
