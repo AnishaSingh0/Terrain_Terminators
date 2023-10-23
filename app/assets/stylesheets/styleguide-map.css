@@ -1,0 +1,23 @@
+:root {
+  --black: rgba(38, 13, 50, 1);
+  --heading-2-font-family: "LeagueSpartan-Bold", Helvetica;
+  --heading-2-font-weight: 700;
+  --heading-2-font-size: 40px;
+  --heading-2-letter-spacing: 0px;
+  --heading-2-line-height: 40px;
+  --heading-2-font-style: normal;
+  --body-font-family: "LeagueSpartan-SemiBold", Helvetica;
+  --body-font-weight: 600;
+  --body-font-size: 18px;
+  --body-letter-spacing: 0px;
+  --body-line-height: 170.00000476837158%;
+  --body-font-style: normal;
+  --instructions-font-family: "LexendZetta-Regular", Helvetica;
+  --instructions-font-weight: 400;
+  --instructions-font-size: 15px;
+  --instructions-letter-spacing: 0px;
+  --instructions-line-height: 129.99999523162842%;
+  --instructions-font-style: normal;
+  --variable-collection-white: rgba(217, 217, 217, 1);
+  --variable-collection-grey: rgba(175, 172, 172, 1);
+}
