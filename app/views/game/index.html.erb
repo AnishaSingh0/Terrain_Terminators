@@ -1,13 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-</head>
+<html>
+  <body>
+    <div class="map-macbook-pro">
+      <div class="map-overlap-wrapper">
+        <div class="map-overlap">
+          <div class="map-frame">
+          <div>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"sign-up" %>
+          </div>
+            <div class="map-overlap-group-wrapper">
+              <div class="map-overlap-group">
+                <div class="map-div">
+                  <div class="map-frame-2">
+                    <div class="map-frame-wrapper">
+                      <div class="map-frame-3">
+                        <div class="map-overlap-group-2">
+                          <p class="map-you-re-a-powerful">
+                            YOU&#39;RE A POWERFUL ALIEN FORCE, HELL-BENT ON CONQUERING EARTH. YOUR MISSION: OBLITERATE
+                            ALL RESISTANCE AND ESTABLISH DOMINANCE. HERE&#39;S YOUR GUIDE TO WREAK HAVOC...<br /><br />WEAKEN
+                            EARTH&#39;S DEFENCES, SEIZE RESOURCES, AND CONTROL THE PLANET BY DEMOLISHING LANDMARKS
+                            SQUARE BY SQUARE. EACH &#39;HUMANWORD&#39; CORRESPONDS TO UNIQUE COSMOS COORDINATES. USE
+                            YOUR EXTRATERRESTRIAL INTELLECT TO UNVEIL EARTH&#39;S MYSTERIES.<br /><br />BEGIN ON EARTH’S
+                            TERRAIN ARMED WITH A MAP.<br /><br />ENTERING YOUR GUESS:<br /><br />TYPE YOUR THREE-WORD
+                            GUESS INTO THE INPUT FIELDS SHOWN.<br /><br />VERIFICATION:<br /><br />CORRECT WORDS TRIGGER
+                            XENOLINGU, OUR LANGUAGE. WHEN ALL WORDS ARE CORRECT, THE MAP SQUARE CHANGES COLOUR. CLOSE?
+                            HINTS FROM CORRUPT HUMANS GUIDE YOU.<br /><br />PROGRESSION:<br /><br />DECODE TO UNLOCK NEW
+                            LEVELS. UNVEIL THE UNIVERSE&#39;S SECRETS.<br /><br />EMBARK ON &#39;INVASION EARTH:
+                            ANNIHILATION PROTOCOL&#39;! CONQUER EARTH IN THIS OTHERWORLDLY ADVENTURE. BEST OF LUCK,
+                            FEARLESS NEXARION!
+                          </p>
+                          <div class="map-text-wrapper"> <%= current_user.username %> </div>
+                        </div>
+                        <div class="map-welcome-commander">WELCOME, COMMANDER:</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="map-frame-4">
+                    <div class="map-div-wrapper">
+                      <div class="map-frame-5">
+                        <div class="map-overlap-group-3">
+                          <%= image_tag "map_page/line-1.svg", class:"map-line"%>
+                          <%= image_tag "map_page/line-2.svg", class:"map-img"%>
+                          <%= image_tag "map_page/line-3.svg", class:"map-line-2"%>
+                          <%= image_tag "map_page/line-4.svg", class:"map-line-3"%>
+                          <%= image_tag "map_page/line-5.svg", class:"map-line-4"%>
+                          <div class="map-frame-6">
 
-<body>
+                            <a href="squares/1">
+                              <div class="map-square_top_left"></div> 
+                            </a>
 
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                            <a href="squares/2">
+                              <div class="map-square"></div> 
+                            </a>
 
-</body>
+                            <a href="squares/3">
+                              <div class="map-square"></div> 
+                            </a>
+
+                            <a href="squares/4">
+                            <div class="map-square_top_right"></div>
+                            </a>
+
+                            <a href="squares/5">
+                              <div class="map-square"></div> 
+                            </a>
+
+                            <a href="squares/6">
+                              <div class="map-square"></div> 
+                            </a>
+
+                            <a href="squares/7">
+                              <div class="map-square"></div> 
+                            </a>
+
+                            <a href="squares/8">
+                              <div class="map-square"></div> 
+                            </a>
+
+                            <a href="squares/9">
+                            <div class="map-square_bottom_left"></div>
+                            </a>
+
+                            <a href="squares/10">
+                              <div class="map-square"></div> 
+                            </a>
+
+                            <a href="squares/11">
+                              <div class="map-square"></div> 
+                            </a>
+
+                            <a href="squares/12">
+                              <div class="map-square_bottom_right"></div>
+                            </a>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-group-wrapper">
+                  <div class="map-group">
+                    <div class="map-overlap-group-4">
+                      <%= image_tag "avatars/Alien4.jpeg", class:"map-alien"%>
+                      <div class="map-rectangle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map-terrain-terminator">TERRAIN TERMINATOR</div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
