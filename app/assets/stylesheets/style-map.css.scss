@@ -1,0 +1,347 @@
+.map-macbook-pro {
+  background-color: #16031c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.map-macbook-pro .map-overlap-wrapper {
+  background-color: #16031c;
+  width: 1512px;
+  height: 982px;
+}
+
+.map-macbook-pro .map-overlap {
+  position: relative;
+  height: 982px;
+}
+
+.map-macbook-pro .map-frame {
+  position: absolute;
+  width: 1512px;
+  height: 982px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-image: url(asset-path('rectangle-4.png'));
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.map-macbook-pro .map-overlap-group-wrapper {
+  position: relative;
+  width: 1262px;
+  height: 900px;
+  top: 84px;
+  left: 128px;
+}
+
+.map-macbook-pro .map-overlap-group {
+  position: relative;
+  width: 1063px;
+  height: 777px;
+  top: 46px;
+  left: 92px;
+}
+
+.map-macbook-pro .map-div {
+  position: absolute;
+  width: 1063px;
+  height: 777px;
+  top: 0;
+  left: 0;
+}
+
+.map-macbook-pro .map-frame-2 {
+  position: absolute;
+  width: 367px;
+  height: 435px;
+  top: 285px;
+  left: 0;
+}
+
+.map-macbook-pro .map-frame-wrapper {
+  position: relative;
+  width: 299px;
+  height: 400px;
+  top: 14px;
+  left: 33px;
+  background-color: #16031c;
+  border-radius: 20px;
+  border: 5px solid;
+  border-color: #97b032;
+}
+
+.map-macbook-pro .map-frame-3 {
+  position: relative;
+  width: 271px;
+  height: 375px;
+  top: 6px;
+  left: 7px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.map-macbook-pro .map-overlap-group-2 {
+  position: absolute;
+  width: 299px;
+  height: 349px;
+  top: 25px;
+  left: -12px;
+}
+
+.map-macbook-pro .map-you-re-a-powerful {
+  position: absolute;
+  width: 265px;
+  top: 42px;
+  left: 18px;
+  font-family: "Lexend Zetta", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15.6px;
+}
+
+.map-macbook-pro .map-text-wrapper {
+  position: absolute;
+  width: 299px;
+  top: 0;
+  left: 0;
+  font-family: "Libre Barcode 39 Extended Text", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 39px;
+}
+
+.map-macbook-pro .map-welcome-commander {
+  position: absolute;
+  width: 265px;
+  top: 4px;
+  left: 6px;
+  font-family: "Lexend Zetta", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15.6px;
+}
+
+.map-macbook-pro .map-frame-4 {
+  position: absolute;
+  width: 713px;
+  height: 777px;
+  top: 0;
+  left: 350px;
+}
+
+.map-macbook-pro .map-div-wrapper {
+  position: relative;
+  width: 675px;
+  height: 675px;
+  top: 18px;
+  left: 15px;
+  background-color: #16031c;
+  border-radius: 20px;
+  border: 5px solid;
+  border-color: #97b032;
+  background-image: url(asset-path('map_page/map.png'));
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.map-macbook-pro .map-frame-5 {
+  position: relative;
+  height: 675px;
+  top: -5px;
+  left: -5px;
+}
+
+.map-macbook-pro .map-overlap-group-3 {
+  position: relative;
+  width: 675px;
+  height: 675px;
+}
+
+.map-macbook-pro .map-line {
+  position: absolute;
+  width: 10px;
+  height: 675px;
+  top: 0;
+  left: 165px;
+}
+
+.map-macbook-pro .map-img {
+  position: absolute;
+  width: 10px;
+  height: 673px;
+  top: 2px;
+  left: 334px;
+}
+
+.map-macbook-pro .map-line-2 {
+  position: absolute;
+  width: 10px;
+  height: 675px;
+  top: 0;
+  left: 502px;
+}
+
+.map-macbook-pro .map-line-3 {
+  position: absolute;
+  width: 675px;
+  height: 10px;
+  top: 219px;
+  left: 0;
+}
+
+.map-macbook-pro .map-line-4 {
+  position: absolute;
+  width: 675px;
+  height: 10px;
+  top: 444px;
+  left: 0;
+}
+
+.map-macbook-pro .map-frame-6 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 675px;
+  height: 665px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px 10px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+}
+
+.map-macbook-pro .map-square_top_left {
+  border-radius: 20px 0px 0px 0px;
+  position: relative;
+  width: 159px;
+  height: 217px;
+}
+
+.map-macbook-pro .map-square_top_left:hover{
+  background-color: #FA143D;
+  opacity: 0.5;
+  border-radius: 20px 0px 0px 0px;
+}
+
+.map-macbook-pro .map-square {
+  position: relative;
+  width: 159px;
+  height: 217px;
+}
+
+.map-macbook-pro .map-square:hover{
+  background-color: #FA143D;
+  opacity: 0.5;
+}
+
+.map-macbook-pro .map-square_top_right {
+  border-radius: 0px 20px 0px 0px;
+  position: relative;
+  width: 159px;
+  height: 217px;
+}
+
+.map-macbook-pro .map-square_top_right:hover{
+  background-color: #FA143D;
+  opacity: 0.5;
+  border-radius: 0px 20px 0px 0px;
+}
+
+.map-macbook-pro .map-square_bottom_left {
+  border-radius: 0px 0px 0px 20px;
+  position: relative;
+  width: 159px;
+  height: 217px;
+}
+
+.map-macbook-pro .map-square_bottom_left:hover{
+  background-color: #FA143D;
+  opacity: 0.5;
+  border-radius: 0px 0px 0px 20px;
+}
+
+.map-macbook-pro .map-square_bottom_right {
+  border-radius: 0px 0px 20px 0px;
+  position: relative;
+  width: 159px;
+  height: 217px;
+}
+
+.map-macbook-pro .map-square_bottom_right:hover{
+  background-color: #FA143D;
+  opacity: 0.5;
+  border-radius: 0px 0px 20px 0px;
+
+}
+
+.map-macbook-pro .map-group-wrapper {
+  position: absolute;
+  width: 319px;
+  height: 260px;
+  top: 18px;
+  left: 21px;
+}
+
+.map-macbook-pro .map-group {
+  position: relative;
+  width: 299px;
+  height: 242px;
+  top: 8px;
+  left: 10px;
+}
+
+.map-macbook-pro .map-overlap-group-4 {
+  position: relative;
+  width: 304px;
+  height: 247px;
+  top: -2px;
+  left: -2px;
+  border-radius: 20px;
+}
+
+.map-macbook-pro .map-alien {
+  position: absolute;
+  width: 298px;
+  height: 240px;
+  top: 4px;
+  left: 4px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.map-macbook-pro .map-rectangle {
+  position: absolute;
+  width: 304px;
+  height: 247px;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  border: 5px solid;
+  border-color: #97b032;
+}
+
+.map-macbook-pro .map-terrain-terminator {
+  position: absolute;
+  width: 938px;
+  top: 53px;
+  left: 287px;
+  font-family: "Alegreya Sans", Helvetica;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 60px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 78px;
+  white-space: nowrap;
+}
+
