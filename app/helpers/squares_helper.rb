@@ -23,40 +23,46 @@ module SquaresHelper
       # app/helpers/image_generator_helper.rb
 
 
-
-  def generate_image(words)
-    url = 'https://api.wizmodel.com/sdapi/v1/txt2img'
-    api_key = ENV['WIZMODEL_API_KEY']
-
-    payload = {
-      prompt: words,
-      steps: 50
-    }.to_json
-
-    headers = {
-      'Content-Type' => 'application/json',
-      'Authorization' => "Bearer #{api_key}" # Replace with your actual API token
-    }
-
-    response = HTTParty.post(url, headers: headers, body: payload)
-    p response
-    base64_string = JSON.parse(response.body)['images'][0]
-
-    # Decode the base64 string into bytes
-    image_data = Base64.decode64(base64_string)
+    def generate_image(words)
+      return "squares/output_image.jpg"
+  
+    end 
     
-   # Define the file path within the public/assets directory
-   file_path = Rails.root.join('app', 'assets', 'images','squares','output_image.jpg')
-
-   # Save the image to the specified file path
-   File.open(file_path, 'wb') do |f|
-     f.write(image_data)
-    end
 
 
-    # Return the path to the saved image file
-    "squares/output_image.jpg"
-  end
+  # def generate_image(words)
+  #   url = 'https://api.wizmodel.com/sdapi/v1/txt2img'
+  #   api_key = ENV['WIZMODEL_API_KEY']
+
+  #   payload = {
+  #     prompt: words,
+  #     steps: 50
+  #   }.to_json
+
+  #   headers = {
+  #     'Content-Type' => 'application/json',
+  #     'Authorization' => "Bearer #{api_key}" # Replace with your actual API token
+  #   }
+
+  #   response = HTTParty.post(url, headers: headers, body: payload)
+  #   p response
+  #   base64_string = JSON.parse(response.body)['images'][0]
+
+  #   # Decode the base64 string into bytes
+  #   image_data = Base64.decode64(base64_string)
+    
+  #  # Define the file path within the public/assets directory
+  #  file_path = Rails.root.join('app', 'assets', 'images','squares','output_image.jpg')
+
+  #  # Save the image to the specified file path
+  #  File.open(file_path, 'wb') do |f|
+  #    f.write(image_data)
+  #   end
+
+
+  #   # Return the path to the saved image file
+  #   "squares/output_image.jpg"
+  # end
 
   # def words_logic(words)
   #   p(words)
@@ -82,11 +88,32 @@ module SquaresHelper
     return remaining_words.join(' ') 
   end 
 
+  def covered_words(words)
+    words.split(' ').map { |word| '*' * (word.length) }.join(' ')
+  end
 
+  # def uncovered_words(covered_words, square_words)
+  #   covered_words_array = covered_words.split(' ')
+  #   square_words_array = square_words.split(' ')
+  #   uncovered_words_array = []
+  #   for i in 0..covered_words_array.length - 1
+  #     if covered_words_array[i] != square_words_array[i]
+  #       uncovered_words_array << square_words_array[i]
+  #     end
+  #   end
+  #   return uncovered_words_array.join(' ')
+  # end
 
-
-
-
- 
+  # def get_display_words(correctly_guessed_words, square_words)
+  #   covered_words_array = covered_words.split(' ')
+  #   square_words_array = square_words.split(' ')
+  #   uncovered_words_array = []
+  
+  #   covered_words_array.each_with_index do |word, i|
+  #     uncovered_words_array << square_words_array[i] if word != '*' * word.length
+  #   end
+  
+  #   uncovered_words_array.join(' ')
+  # end
 
 end
