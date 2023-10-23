@@ -53,6 +53,7 @@ class SquaresController < ApplicationController
     # User guessed everything correctly 
     if remaining_words == ""
       @square.update(words: remaining_words) 
+      @user_square.update(is_destroyed: true)
       redirect_to "/squares/#{params[:id]}?message=All%20words%20found!"
     
     # User guessed at least one word correctly
