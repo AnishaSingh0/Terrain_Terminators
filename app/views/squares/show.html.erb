@@ -1,7 +1,7 @@
 <!-- app/views/map_squares/show.html.erb -->
 <p>Longitude: <%= @square.lng %></p>
 <p>Latitude: <%= @square.lat %></p>
-<p>Three words: <%= @covered_words %></p>
+<p>Three words: <%= @user_square.remaining_words %></p>
 <p>Correctly guessed words: <%= $uncovered_words %></p>
 <% if @square.image_url.present? %>
   <%= image_tag @square.image_url, alt: "…", width: "200", height: "200", loading: "lazy" %>

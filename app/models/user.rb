@@ -9,4 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
+  has_many :user_squares
+  has_many :squares, through: :user_squares
+
 end
