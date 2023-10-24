@@ -7,8 +7,8 @@
 <% end %>
 
 <%= form_tag do %>
-  <%= text_field_tag :words, nil, class: 'custom-text-field' %>
-  <%= submit_tag 'Submit', id: 'submit-button' %>
+  <%= text_field_tag :words, nil, class: 'custom-text-field', disabled: @user_square.is_destroyed  %>
+  <%= submit_tag 'Submit', id: 'submit-button', disabled: @user_square.is_destroyed == true%>
 <% end %>
 
 <p><%= @message %></p>
