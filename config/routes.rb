@@ -38,4 +38,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  get 'avatars' => 'game#avatars'
+  post 'location' , to: 'game#location'
+
 end
