@@ -1,28 +1,99 @@
-<!-- app/views/map_squares/show.html.erb -->
-<p>Longitude: <%= @square.lng %></p>
-<p>Latitude: <%= @square.lat %></p>
-<p>Three words: <%= @display_words%></p>
-<% if @square.image_url.present? %>
-  <%= image_tag @square.image_url, alt: "…", width: "200", height: "200", loading: "lazy" %>
-<% end %>
 
-<%= form_tag do %>
-  <%= text_field_tag :words, nil, class: 'custom-text-field', disabled: @user_square.is_destroyed  %>
-  <%= submit_tag 'Submit', id: 'submit-button', disabled: @user_square.is_destroyed == true%>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="square-macbook-pro">
+      <div class="square-overlap-wrapper">
+        <div class="square-overlap">
+          <div class="square-frame">
+            <div class="square-overlap-group-wrapper">
+              <div class="square-overlap-group">
+                <div class="square-group-wrapper">
+                  <div class="square-group">
+                    <div class="square-div">
+                      <%= image_tag "avatars/Alien4.jpeg", class:"square-alien"%>
+                      <div class="square-rectangle"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="square-overlap-2">
+                  <div class="square-frame-2">
+                    <div class="square-frame-wrapper">
+                      <div class="square-frame-3">
+                        <div class="square-overlap-group-2">
+                          <p class="square-you-re-a-powerful">
+                            YOU&#39;RE A POWERFUL ALIEN FORCE, HELL-BENT ON CONQUERING EARTH. YOUR MISSION: OBLITERATE
+                            ALL RESISTANCE AND ESTABLISH DOMINANCE. HERE&#39;S YOUR GUIDE TO WREAK HAVOC...<br /><br />WEAKEN
+                            EARTH&#39;S DEFENCES, SEIZE RESOURCES, AND CONTROL THE PLANET BY DEMOLISHING LANDMARKS
+                            SQUARE BY SQUARE. EACH &#39;HUMANWORD&#39; CORRESPONDS TO UNIQUE COSMOS COORDINATES. USE
+                            YOUR EXTRATERRESTRIAL INTELLECT TO UNVEIL EARTH&#39;S MYSTERIES.<br /><br />BEGIN ON EARTH’S
+                            TERRAIN ARMED WITH A MAP.<br /><br />ENTERING YOUR GUESS:<br /><br />TYPE YOUR THREE-WORD
+                            GUESS INTO THE INPUT FIELDS SHOWN.<br /><br />VERIFICATION:<br /><br />CORRECT WORDS TRIGGER
+                            XENOLINGU, OUR LANGUAGE. WHEN ALL WORDS ARE CORRECT, THE MAP SQUARE CHANGES COLOUR. CLOSE?
+                            HINTS FROM CORRUPT HUMANS GUIDE YOU.<br /><br />PROGRESSION:<br /><br />DECODE TO UNLOCK NEW
+                            LEVELS. UNVEIL THE UNIVERSE&#39;S SECRETS.<br /><br />EMBARK ON &#39;INVASION EARTH:
+                            ANNIHILATION PROTOCOL&#39;! CONQUER EARTH IN THIS OTHERWORLDLY ADVENTURE. BEST OF LUCK,
+                            FEARLESS NEXARION!
+                          </p>
+                          <div class="square-text-wrapper">  <%= current_user.username %>  </div>
+                        </div>
+                        <div class="square-welcome-commander">WELCOME, COMMANDER:</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="square-div-wrapper">
+                    <div class="square-overlap-3">
+                      <div class="square-overlap-group-3">
+                        <div class="square-frame-4">
+                          <div class="square-text-wrapper-2"><%= @display_words.split(" ")[0]%></div>
+                          <div class="square-text-wrapper-2"><%= @display_words.split(" ")[1]%></div>
+                          <div class="square-text-wrapper-2"><%= @display_words.split(" ")[2]%></div>
+                          <div > <%= link_to image_tag("squares_page/icons8-x-48-1.png", class:"square-x"), "/" %> </div>
+                        </div>
+                      </div>
+                      <% if @square.image_url.present? %>
+                        <%= image_tag "squares/output_image.jpeg", class:"square-ai-image"%>
+                      <% end %>
+                      <div class="square-overlap-4">
+                        <div>
+                          <%= form_tag do %>
+                            <%= text_field_tag :words, nil, class: 'custom-text-field' %>
+                            <%= submit_tag 'TRANSLATE', id: 'submit-button', class: 'translate_button' %>
+                          <% end %>
+                        </div>
+                        <div style="color: #FA143D;">
+                          <p><%= @message %></p>
+                          <% if flash.now[:alert] %>
+                            <div class="alert alert-danger">
+                              <%= flash.now[:alert] %>
+                            </div>
+                          <% elsif flash.now[:success] %>
+                            <div class="alert alert-success">
+                              <%= flash.now[:success] %>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square-terrain-terminator">TERRAIN TERMINATOR</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 
-<p><%= @message %></p>
 
 
-<% if flash.now[:alert] %>
-  <div class="alert alert-danger">
-    <%= flash.now[:alert] %>
-  </div>
-<% elsif flash.now[:success] %>
-  <div class="alert alert-success">
-    <%= flash.now[:success] %>
-  </div>
-<% end %>
 
 <script>
   $(document).on('ready turbolinks:load', function () {
@@ -52,9 +123,26 @@
 
 <style>
   .custom-text-field {
-    background-color: black !important;
+    background-color: #821CB1 !important;
     color: white !important;
-    border: none !important;
+    border: 5px solid #97b032 !important;
+    border-radius: 20px;
     padding: 5px !important;
+  }
+  .translate_button {
+    background-color: #97b032 !important;
+    color: #16031c !important;
+    border: 5px solid #97b032 !important;
+    border-radius: 20px;
+    padding: 5px !important;
+    font-weight: bold;
+  }
+  .translate_button:hover {
+    background-color: white !important;
+    color: #16031c !important;
+    border: 5px solid white !important;
+    border-radius: 20px;
+    padding: 5px !important;
+    font-weight: bold;
   }
 </style>
