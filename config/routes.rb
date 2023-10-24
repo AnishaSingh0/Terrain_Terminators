@@ -38,4 +38,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  # adds the route for the avatar page
+  get "avatars"=> "users#get_avatars"
+
 end
