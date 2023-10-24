@@ -51,7 +51,8 @@
 
 
 <a href="/squares/<%= square.square_id %>">
-  <div class="map-square<%= "_top_left" if index == 0 %><%= "_top_right" if index == 3 %><%= "_bottom_left" if index == 8 %><%= "_bottom_right" if index == 11 %><%= " destroyed" if square.is_destroyed %>">
+  <div class="map-square<%= "_top_left" if index == 0 %><%= "_top_right" if index == 3 %><%= "_bottom_left" if index == 8 %><%= "_bottom_right" if index == 11 %>
+  <%= " destroyed" if square.is_destroyed %>">
   </div>
 </a>
 <% end %>
@@ -83,7 +84,7 @@
 
 
 <style>
-.map-square.destroyed {
+.destroyed {
     background-color: #200132;
   }
 </style>
