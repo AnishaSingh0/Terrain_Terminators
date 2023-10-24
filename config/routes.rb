@@ -38,4 +38,6 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  post '/save_location', to: 'pages#save_location'
+
 end

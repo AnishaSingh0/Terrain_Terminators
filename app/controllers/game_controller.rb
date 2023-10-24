@@ -5,4 +5,13 @@ class GameController < ApplicationController
         p @user_squares
         render "index"
     end
+
+    def save_location
+        latitude = params[:latitude]
+        longitude = params[:longitude]
+        
+        # Do something with latitude and longitude, such as saving them to the database
+        
+        return latitude, longitude
+      end
 end

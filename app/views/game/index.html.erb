@@ -79,6 +79,8 @@
         </div>
       </div>
     </div>
+    <button onclick="getUserLocation()">Get My Location</button>
+
   </body>
 </html>
 
@@ -88,3 +90,36 @@
     background-color: #200132;
   }
 </style>
+
+<script>
+  function getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log(latitude, longitude)
+
+    $.ajax({
+    type: 'POST',
+    url: '/save_location', // Replace with the appropriate URL endpoint
+    data: { latitude: latitude, longitude: longitude },
+    success: function(response) {
+      console.log('Location data sent successfully.');
+      // Handle success response if needed
+    },
+    error: function(error) {
+      console.error('Error sending location data:', error);
+      // Handle error response if needed
+    }
+
+    // You can send the latitude and longitude to your server via AJAX
+    // Example AJAX request to send the coordinates to the server:
+    // $.post('/save_location', { latitude: latitude, longitude: longitude });
+  }
+</script>
