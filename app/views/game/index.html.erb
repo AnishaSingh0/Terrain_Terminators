@@ -48,7 +48,7 @@
                           <div class="map-frame-6">
 
                             <% @user_squares.each_with_index do |square, index| %>
-  <a href="/squares/<%= square.id %>">
+  <a href="/squares/<%= square.square_id %>">
     <div class="map-square
       <%= "_top_left" if index == 0 %>
       <%= "_top_right" if index == 3 %>
