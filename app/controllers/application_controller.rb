@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
     end
 
     def after_sign_in_path_for(resource)
-        authenticated_root_path # Redirect to the game page after sign in
+        # authenticated_root_path # Redirect to the game page after sign in
+        "/avatars"
     end
 
     def after_sign_up_path_for(resource)
