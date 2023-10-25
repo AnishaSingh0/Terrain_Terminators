@@ -11,6 +11,9 @@
       <div class="square-overlap-wrapper">
         <div class="square-overlap">
           <div class="square-frame">
+          <div>
+          <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, class:"logout_button" %>
+        </div>
             <div class="square-overlap-group-wrapper">
               <div class="square-overlap-group">
                 <div class="square-group-wrapper">
@@ -139,10 +142,23 @@
   }
   .translate_button:hover {
     background-color: white !important;
-    color: #16031c !important;
     border: 5px solid white !important;
-    border-radius: 20px;
-    padding: 5px !important;
-    font-weight: bold;
+    cursor: pointer;
   }
+  .logout_button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #97b032 !important;
+  color: #16031c !important;
+  border: 5px solid #97b032 !important;
+  border-radius: 20px;
+  padding: 5px !important;
+  font-weight: bold;
+  font-family: "Alegreya Sans", Helvetica;
+}
+.logout_button:hover {
+  background-color: white !important;
+  border: 5px solid white !important;
+}
 </style>
