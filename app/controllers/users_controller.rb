@@ -10,4 +10,9 @@ class UsersController < ApplicationController
 
   def update
   end
+
+  def get_avatars
+    render "avatar/avatar_profile"
+  end
+
 end

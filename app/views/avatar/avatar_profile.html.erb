@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<p>  Avatar  Profile </p>
+<head>
+    <title> Choose you Avatar</title>
+</head>
+
+<body>
+<%= form_tag '/avatar' do  %>
+  <%= text_field_tag :avatar_filename %>
+  <%= submit_tag 'Submit', id: 'submit-button' %>
+<% end %>
+
+    <a href="/game"><button type="button">Ani</button></a>   
+    <a href="/game"><button type="button">Jennifer</button></a>
+    <a href="/game"><button type="button">Judith</button></a>
+    <a href="/game"><button type="button">Nayan</button></a>
+    <a href="/game"><button type="button">Michaela</button></a>
+</body>
+</html>
