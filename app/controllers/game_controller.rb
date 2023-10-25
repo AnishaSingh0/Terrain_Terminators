@@ -27,12 +27,13 @@ class GameController < ApplicationController
         p word 
         words << word
         if words.length <= 12 
-            square = Square.create(lat: coordinate[:lat], lng: coordinate[:lng], words: word.split('.').join(' '))
-            p square
-            user_square = UserSquare.create(user_id: user.id, square_id: square.id, remaining_words: word.split('.').join(' '))
-            p user_square
+            split_words = word.split('.').join(' ')
+            square = Square.create(lat: coordinate[:lat], lng: coordinate[:lng], words: split_words)
             image_path = generate_image(word.split('.').join(' '))
-            user_square.update(image_path: image_path)
+            user_square = UserSquare.create(user_id: user.id, square_id: square.id, remaining_words:split_words, image_path: image_path)
+            p user_square
+            # image_path = generate_image(word.split('.').join(' '))
+            # user_square.update(image_path: image_path)
         end
     end 
    
