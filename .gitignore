@@ -40,4 +40,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/app/assets/images/squares/*
+/app/assets/images/squares/*.jpg
+
