@@ -15,7 +15,4 @@ class UsersController < ApplicationController
     render "avatar/avatar_profile"
   end
 
-  def chosen_avatar
-    render ""
-  end
 end
