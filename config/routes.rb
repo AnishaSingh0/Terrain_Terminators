@@ -41,4 +41,5 @@ Rails.application.routes.draw do
   # adds the route for the avatar page
   get "avatar"=> "users#get_avatars"
   post "avatar", to: "avatar#choose_avatar"
+  post 'location' , to: 'game#location'
 end
