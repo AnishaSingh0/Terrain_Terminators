@@ -5,7 +5,7 @@ class CreateUserSquares < ActiveRecord::Migration[7.1]
       t.references :square, null: false, foreign_key: true
       t.string :remaining_words
       t.string :image_path
-      t.boolean :is_destroyed, default: false
+      t.boolean :is_destroyed
 
       t.timestamps
     end
