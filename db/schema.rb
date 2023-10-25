@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_24_122942) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_25_150720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "avatars", force: :cascade do |t|
     t.string "url"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_avatars_on_user_id"
   end
 
   create_table "squares", force: :cascade do |t|
@@ -47,18 +45,34 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_24_122942) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "avatar_file", default: "Alien1.jpeg", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "avatar"
+    t.bigint "avatar_id"
+    t.index ["avatar_id"], name: "index_users_on_avatar_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "avatars", "users"
+  create_table "users_squares", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "square_id", null: false
+    t.string "remaining_words"
+    t.string "image_path"
+    t.boolean "is_destroyed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["square_id"], name: "index_users_squares_on_square_id"
+    t.index ["user_id"], name: "index_users_squares_on_user_id"
+  end
+
   add_foreign_key "user_squares", "squares"
   add_foreign_key "user_squares", "users"
+  add_foreign_key "users", "avatars"
+  add_foreign_key "users_squares", "squares"
+  add_foreign_key "users_squares", "users"
 end
