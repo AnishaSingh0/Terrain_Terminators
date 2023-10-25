@@ -16,7 +16,7 @@ RSpec.feature "Timeline", type: :feature do
     # check "user_agreed_to_terms"
     click_button "Sign up"
 
-    expect(page).to have_content(/Avatar/) 
+    expect(page).to have_content(/CHOOSE YOUR LIFEFORM/) 
     # expect(page).to have_content(/Back Story/)
   end
 
