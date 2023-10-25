@@ -15,5 +15,15 @@
     <a href="/game"><button type="button">Judith</button></a>
     <a href="/game"><button type="button">Nayan</button></a>
     <a href="/game"><button type="button">Michaela</button></a>
+
+
+
+
+    <%= form_tag '/location' do  %>
+      <%= text_field_tag :location %>
+      <%= submit_tag 'Submit', id: 'submit-button' %>
+    <% end %>
+
+    
 </body>
 </html>
