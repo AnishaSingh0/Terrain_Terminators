@@ -1,6 +1,6 @@
-class CreateUsersSquares < ActiveRecord::Migration[7.1]
+class CreateUserSquares < ActiveRecord::Migration[7.1]
   def change
-    create_table :users_squares do |t|
+    create_table :user_squares do |t|
       t.references :user, null: false, foreign_key: true
       t.references :square, null: false, foreign_key: true
       t.string :remaining_words
