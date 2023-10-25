@@ -23,10 +23,8 @@ module SquaresHelper
       # app/helpers/image_generator_helper.rb
 
 
-    def generate_image(words)
-      return "squares/output_image.jpg"
-  
-    end 
+
+      
     
 
 
