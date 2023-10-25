@@ -719,9 +719,10 @@
           1,
           null,
           null,
-          1,
-          1,
           null,
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -1268,7 +1269,10 @@
           null,
           null,
           1,
+          null,
+          null,
           2,
+          null,
           null,
           null,
           1,
@@ -1282,59 +1286,29 @@
           null
         ]
       },
-      "/Users/nayangurung/Projects/Makers/final_projec/Terrain_Terminators/app/controllers/home_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/nayangurung/Projects/Makers/final_projec/Terrain_Terminators/app/controllers/game_controller.rb": {
+      "/Users/nayangurung/Projects/Makers/final_projec/Terrain_Terminators/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
+          null,
+          null,
           1,
+          null,
+          null,
+          1,
+          null,
+          null,
           1,
           null,
           null,
           1,
           2,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1698244667
+    "timestamp": 1698247779
   }
 }
