@@ -31,6 +31,7 @@ class SquaresController < ApplicationController
       @user_square.update(remaining_words: remaining_words) 
       @image_path = generate_image(@user_square.remaining_words)
       @user_square.update(image_path: @image_path) 
+      
       redirect_to "/squares/#{params[:id]}?message=correct"
     else 
       redirect_to "/squares/#{params[:id]}?message=incorrect"

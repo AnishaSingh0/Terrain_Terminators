@@ -59,14 +59,14 @@
                           <div > <%= link_to image_tag("squares_page/icons8-x-48-1.png", class:"square-x"), "/" %> </div>
                         </div>
                       </div>
-                      <% if @square.image_url.present? %>
-                        <%= image_tag "squares/output_image.jpeg", class:"square-ai-image"%>
+                      <% if @user_square.image_path.present? %>
+                        <%= image_tag @user_square.image_path, class:"square-ai-image"%>
                       <% end %>
                       <div class="square-overlap-4">
                         <div>
                           <%= form_tag do %>
-                            <%= text_field_tag :words, nil, class: 'custom-text-field' %>
-                            <%= submit_tag 'TRANSLATE', id: 'submit-button', class: 'translate_button' %>
+                            <%= text_field_tag :words, nil, class: 'custom-text-field', disabled: @user_square.is_destroyed %>
+                            <%= submit_tag 'TRANSLATE', id: 'submit-button', class: 'translate_button', disabled: @user_square.is_destroyed == true %>
                           <% end %>
                         </div>
                         <div style="color: #FA143D;">
