@@ -95,18 +95,25 @@ module SquaresHelper
   def get_display_words(remaining_words, square_words)
     square_words_array = square_words.split
     remaining_words_array = remaining_words.split
-  
     # Replace words in square_words with asterisks if they exist in remaining_words
     result = square_words_array.map do |word|
       if remaining_words_array.include?(word)
-        '*' * word.length
+        translate(word)
       else
         word
       end
     end 
-    
-  
     result.join(' ')
+  end
+
+  def translate(word)
+    alphabet_dict = {"a"=>"▣", "b"=>"▤","c"=>"▥","d"=>"▦","e"=>"▧","f"=>"▨","g"=>"▩","h"=>"◧","i"=>"◨","j"=>"☰","k"=>"☱","l"=>"☲","m"=>"☳","n"=>"☴","o"=>"☵","p"=>"☶","q"=>"☷","r"=>"◩","s"=>"◪","t"=>"◫","u"=>"◰","v"=>"◱","w"=>"◲","x"=>"◳","y"=>"□","z"=>"■"}
+    translated_word = ""
+    for char in word.chars do
+      print(translated_word)
+      translated_word += alphabet_dict[char]
+    end
+    translated_word
   end
 
 
