@@ -6,32 +6,7 @@ class SquaresController < ApplicationController
       @square = Square.find(params[:id])
       @user = current_user
       @user_square = UserSquare.find_or_initialize_by(user: @user, square: @square)
-      @user_square.save
-      @three_words = get_three_words(@square.lat, @square.lng) 
-      @three_words = @three_words.split('.').join(' ')
-
-      if @square.words == nil
-        @square.update(words: @three_words)
-        @image_path = generate_image(@square.words)
-        @square.update(image_url: @image_path)
-        @user_square.remaining_words = @three_words 
-        @user_square.save
-        @display_words = get_display_words(@three_words, @three_words)
-      end 
-
-      if @user_square.remaining_words == nil
-        @user_square.remaining_words = @three_words 
-        @user_square.save
-        @display_words = get_display_words(@user_square.remaining_words , @square.words)
-      else
-        @display_words = get_display_words(@user_square.remaining_words , @square.words)
-      end 
-
-      if @user_square.remaining_words == ""
-        @display_words = @square.words
-      end 
-
-      p params[:message] 
+      @display_words = get_display_words(@user_square.remaining_words , @square.words)
       @message = params[:message]
   end
     
