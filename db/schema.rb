@@ -10,26 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_23_162110) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_25_150720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "squares", id: :serial, force: :cascade do |t|
+  create_table "avatars", force: :cascade do |t|
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "squares", force: :cascade do |t|
     t.float "lng"
     t.float "lat"
-    t.timestamptz "created_at"
-    t.timestamptz "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "image_url"
     t.string "words"
+    t.string "remaining_words"
   end
 
   create_table "user_squares", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "square_id"
     t.string "remaining_words"
+    t.string "image_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_path"
     t.boolean "is_destroyed", default: false
     t.index ["square_id"], name: "index_user_squares_on_square_id"
     t.index ["user_id"], name: "index_user_squares_on_user_id"
@@ -44,10 +51,28 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_23_162110) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "avatar"
+    t.bigint "avatar_id"
+    t.index ["avatar_id"], name: "index_users_on_avatar_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_squares", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "square_id", null: false
+    t.string "remaining_words"
+    t.string "image_path"
+    t.boolean "is_destroyed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["square_id"], name: "index_users_squares_on_square_id"
+    t.index ["user_id"], name: "index_users_squares_on_user_id"
+  end
+
   add_foreign_key "user_squares", "squares"
   add_foreign_key "user_squares", "users"
+  add_foreign_key "users", "avatars"
+  add_foreign_key "users_squares", "squares"
+  add_foreign_key "users_squares", "users"
 end
