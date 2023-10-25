@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_25_150720) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_25_153845) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,13 +31,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_25_150720) do
   end
 
   create_table "user_squares", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "square_id"
+    t.bigint "user_id", null: false
+    t.bigint "square_id", null: false
     t.string "remaining_words"
     t.string "image_path"
+    t.boolean "is_destroyed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_destroyed", default: false
     t.index ["square_id"], name: "index_user_squares_on_square_id"
     t.index ["user_id"], name: "index_user_squares_on_user_id"
   end
