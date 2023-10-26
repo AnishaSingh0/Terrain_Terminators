@@ -60,7 +60,8 @@
                         </div>
                       </div>
                       <% if @user_square.image_path.present? %>
-                        <%= image_tag @user_square.image_path, class:"square-ai-image"%>
+                        <img src="<%= @s3_url %>" alt="Image Description", class="square-ai-image">
+                        
                       <% end %>
                       <div class="square-overlap-4">
                         <div>
