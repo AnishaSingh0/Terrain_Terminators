@@ -37,6 +37,7 @@ class GameController < ApplicationController
             # user_square.update(image_path: image_path)
         end
     end 
+    redirect_to '/game'
    
     end 
 
