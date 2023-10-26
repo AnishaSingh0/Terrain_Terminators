@@ -4,6 +4,8 @@ class AvatarController < ApplicationController
           render "avatars"
         end    
       def choose_avatar
+        p secret_key = ENV['SECRET_KEY']
+        p secret_key = ENV['SECRET_KEY_BASE']
         filename = params[:avatar_filename]
         p "#{filename}"
         p "my user id is: #{current_user.id}"
