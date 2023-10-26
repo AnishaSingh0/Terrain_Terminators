@@ -46,36 +46,22 @@
   border-radius: 20px;
   border: 5px solid;
   border-color: #97b032;
-  filter: blur(4px);
 }
 
 .macbook-pro .sign-up {
-
-  font-family: "Roboto Condensed", Helvetica;
-  font-weight: 500;
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 20px;
-  text-align: center;
-  letter-spacing: 0;
-  white-space: nowrap;
-
-  cursor: pointer;
-  border: 0;
-  border-radius: 4px;
-  font-weight: 600;
-  margin: 0 10px;
-  width: 200px;
-  padding: 10px 0;
-  box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
-  transition: 0.4s;
+  background-color: #97b032 !important;
+  color: #16031c !important;
+  border: 5px solid #97b032 !important;
+  border-radius: 20px;
+  padding: 5px !important;
+  font-weight: bold;
 }
 
 .sign-up:hover {
-  color: white;
-
+  background-color: white !important;
+  border: 5px solid white !important;
+  cursor: pointer;
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
-  background-color: #811cb133;
 }
 
 .macbook-pro .terrain-terminator {
@@ -118,7 +104,6 @@
   border: 5px solid;
   border-color: #97b032;
   text-align: center;
-  // filter: blur(4px);
 }
 
 .macbook-pro .error-messages {
@@ -181,7 +166,6 @@
   border-radius: 20px;
   border: 5px solid;
   border-color: #97b032;
-  filter: blur(4px);
 }
 
 .macbook-pro .frame-2 {
