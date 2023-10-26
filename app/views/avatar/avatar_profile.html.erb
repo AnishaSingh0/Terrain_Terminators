@@ -1,29 +1,89 @@
-<!DOCTYPE html>
-<p>  Avatar  Profile </p>
-<head>
-    <title> Choose you Avatar</title>
-</head>
-
+<html>
 <body>
-<%= form_tag '/avatar' do  %>
-  <%= text_field_tag :avatar_filename %>
-  <%= submit_tag 'Submit', id: 'submit-button' %>
-<% end %>
+  <div class="avatar-macbook-pro">
+    <div class="avatar-overlap-wrapper">
+      <div class="avatar-overlap">
+        <div class="avatar-frame">
+          <div class="avatar-text-wrapper">CHOOSE YOUR LIFEFORM</div>
+          <div class="avatar-div">
 
-    <a href="/game"><button type="button">Ani</button></a>   
-    <a href="/game"><button type="button">Jennifer</button></a>
-    <a href="/game"><button type="button">Judith</button></a>
-    <a href="/game"><button type="button">Nayan</button></a>
-    <a href="/game"><button type="button">Michaela</button></a>
+          <%= form_tag '/avatar' do  %>
+            <%= hidden_field_tag :avatar_filename, 'Alien1.jpeg' %>
+            <%= image_submit_tag 'avatars/Alien1.jpeg', id: 'submit-button', class: "avatar-avatar-outline" %>
+          <% end %>
 
+          <%= form_tag '/avatar' do  %>
+            <%= hidden_field_tag :avatar_filename, 'Alien2.jpeg' %>
+            <%= image_submit_tag 'avatars/Alien2.jpeg', id: 'submit-button', class: "avatar-avatar-outline" %>
+          <% end %>
+          <%= form_tag '/avatar' do  %>
+            <%= hidden_field_tag :avatar_filename, 'Alien3.jpeg' %>
+            <%= image_submit_tag 'avatars/Alien3.jpeg', id: 'submit-button', class: "avatar-avatar-outline" %>
+          <% end %>
+          <%= form_tag '/avatar' do  %>
+            <%= hidden_field_tag :avatar_filename, 'Alien4.jpeg' %>
+            <%= image_submit_tag 'avatars/Alien4.jpeg', id: 'submit-button', class: "avatar-avatar-outline" %>
+          <% end %>
+          <%= form_tag '/avatar' do  %>
+            <%= hidden_field_tag :avatar_filename, 'Alien5.jpeg' %>
+            <%= image_submit_tag 'avatars/Alien5.jpeg', id: 'submit-button', class: "avatar-avatar-outline" %>
+          <% end %>
 
-
-
-    <%= form_tag '/location' do  %>
-      <%= text_field_tag :location %>
-      <%= submit_tag 'Submit', id: 'submit-button' %>
-    <% end %>
-
-    
+          </div>
+          
+          <div class="avatar-frame-2">
+            <div class="avatar-text-wrapper-2">ENTER TARGET</div>
+            <%= form_tag '/location' do  %>
+            <div class="avatar-group-4"> <%= text_field_tag :location, nil, class: 'custom-text-field' %> </div>
+            <div class="avatar-overlap-group-wrapper">
+              <%= submit_tag 'INVADE', id: 'submit-button', class: 'invade_button' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
+
+<style>
+  .custom-text-field {
+    background-color: #16031c !important;
+    color: white !important;
+    border: 5px solid #97b032 !important;
+    border-radius: 20px;
+    padding: 15px !important;
+    font-size: 20px;
+  }
+  .invade_button {
+    font-size: 40px;
+    background-color: #97b032 !important;
+    color: #16031c !important;
+    border: 5px solid #97b032 !important;
+    border-radius: 20px;
+    padding: 15px !important;
+    font-weight: bold;
+  }
+  .invade_button:hover {
+    background-color: white !important;
+    border: 5px solid #48abe0 !important;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #48abe0,
+              0 0 20px 7px #ebecca,
+              0 0 25px 20px #8a2be2,
+              0 0 30px 25px #ff1493;
+  }
+  .alien-1 {
+    # background-color: transparent;
+    background-image: url(asset-path('avatars/Alien1.jpeg')); !important;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    opacity: 0.5;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 20px;
+  }
+</style>
