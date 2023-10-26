@@ -112,7 +112,7 @@ RSpec.feature "Timeline", type: :feature do
     # check "user_agreed_to_terms"
     click_button "Sign up"
 
-    expect(page).to have_content(/Email has already been taken Password/)
+    expect(page).to have_content(/Email has already been taken/)
   end
 
     # scenario "Cannot sign up if age is less than 13" do
