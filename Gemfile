@@ -97,5 +97,3 @@ gem 'sass-rails'
 # but it's a valuable tool for testing."
 
 gem 'factory_bot_rails' 
-
-gem 'aws-sdk-s3', require: false
