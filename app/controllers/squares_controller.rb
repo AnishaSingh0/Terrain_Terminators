@@ -6,6 +6,9 @@ class SquaresController < ApplicationController
       @square = Square.find(params[:id])
       @user = current_user
       @user_square = UserSquare.find_or_initialize_by(user: @user, square: @square)
+      bucket_name = 'ttsquaresdev'
+      image_name = @user_square.image_path
+      @s3_url = "https://#{bucket_name}.s3.amazonaws.com/#{image_name}"
       @display_words = get_display_words(@user_square.remaining_words , @square.words)
       @message = params[:message]
   end

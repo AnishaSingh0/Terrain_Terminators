@@ -23,7 +23,7 @@ module SquaresHelper
       # app/helpers/image_generator_helper.rb
 
 
-  def generate_image(words)
+  # def generate_image(words)
     # return "squares/output_image.jpg"
 
   #   response = HTTParty.post("https://api.openai.com/v1/images/generations",
@@ -49,38 +49,83 @@ module SquaresHelper
   # Return the local file path
 #   return "output_image.jpg"
 # end 
-url = 'https://api.wizmodel.com/sdapi/v1/txt2img'
-api_key = ENV['WIZMODEL_API_KEY']
+# url = 'https://api.wizmodel.com/sdapi/v1/txt2img'
+# api_key = ENV['WIZMODEL_API_KEY']
 
-payload = {
-  prompt: words,
-  steps: 50
-}.to_json
+# payload = {
+#   prompt: words,
+#   steps: 50
+# }.to_json
 
-headers = {
-  'Content-Type' => 'application/json',
-  'Authorization' => "Bearer #{api_key}"
-}
+# headers = {
+#   'Content-Type' => 'application/json',
+#   'Authorization' => "Bearer #{api_key}"
+# }
 
-response = HTTParty.post(url, headers: headers, body: payload)
-base64_string = JSON.parse(response.body)['images'][0]
+# response = HTTParty.post(url, headers: headers, body: payload)
+# base64_string = JSON.parse(response.body)['images'][0]
 
-# Decode the base64 string into bytes
-image_data = Base64.decode64(base64_string)
+# # Decode the base64 string into bytes
+# image_data = Base64.decode64(base64_string)
 
-# Define the file path within the public/assets directory
-image_number = Time.now.to_i # Get a unique number for the image name
-file_name = "image#{image_number}.jpg"
-file_path = Rails.root.join('app', 'assets', 'images', 'squares', file_name)
+# # Define the file path within the public/assets directory
+# image_number = Time.now.to_i # Get a unique number for the image name
+# file_name = "image#{image_number}.jpg"
+# file_path = Rails.root.join('app', 'assets', 'images', 'squares', file_name)
 
-# Save the image to the specified file path
-File.open(file_path, 'wb') do |f|
-  f.write(image_data)
+# # Save the image to the specified file path
+# File.open(file_path, 'wb') do |f|
+#   f.write(image_data)
+# end
+
+# relative_path = file_path.relative_path_from(Rails.root.join('app', 'assets', 'images'))
+# relative_path.to_s
+# end
+
+require 'aws-sdk-s3'
+
+def generate_image(words)
+  url = 'https://api.wizmodel.com/sdapi/v1/txt2img'
+  api_key = ENV['WIZMODEL_API_KEY']
+
+  payload = {
+    prompt: words,
+    steps: 50
+  }.to_json
+
+  headers = {
+    'Content-Type' => 'application/json',
+    'Authorization' => "Bearer #{api_key}"
+  }
+
+  response = HTTParty.post(url, headers: headers, body: payload)
+  base64_string = JSON.parse(response.body)['images'][0]
+
+  # Decode the base64 string into bytes
+  image_data = Base64.decode64(base64_string)
+
+  # Define the file name (object key)
+  image_number = Time.now.to_i
+  file_name = "image#{image_number}.jpg"
+  aws_credentials = Rails.application.credentials.aws
+
+
+  # Upload the image to S3 bucket
+  s3 = Aws::S3::Resource.new(
+    access_key_id: aws_credentials[:access_key_id],
+    secret_access_key: aws_credentials[:secret_access_key],
+    region: 'eu-west-2' # Change this to your desired AWS region
+  )
+  bucket = s3.bucket('ttsquaresdev')
+
+  # Upload the image to the specified S3 bucket with the defined file name (object key)
+  obj = bucket.object(file_name)
+  obj.put(body: image_data, content_type: 'image/jpeg', acl: 'public-read')
+
+  # Return the object key (file name) after uploading to S3 bucket
+  file_name
 end
 
-relative_path = file_path.relative_path_from(Rails.root.join('app', 'assets', 'images'))
-relative_path.to_s
-end
 
 
   def get_remaining_words(square_words)
