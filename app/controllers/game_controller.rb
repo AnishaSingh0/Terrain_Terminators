@@ -27,6 +27,7 @@ class GameController < ApplicationController
         p word 
         words << word
         if words.length <= 12 
+            p words.length
             split_words = word.split('.').join(' ')
             square = Square.create(lat: coordinate[:lat], lng: coordinate[:lng], words: split_words)
             image_path = generate_image(word.split('.').join(' '))
