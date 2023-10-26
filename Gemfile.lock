@@ -341,7 +341,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   pg
-  puma (~> 4.3.12)
+  puma (~> 4.3.11)
   rails (~> 7.1)
   rspec-rails (~> 6.0)
   sass-rails
