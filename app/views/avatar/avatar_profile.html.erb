@@ -33,10 +33,17 @@
           
           <div class="avatar-frame-2">
             <div class="avatar-text-wrapper-2">ENTER TARGET</div>
+            
             <%= form_tag '/location' do  %>
             <div class="avatar-group-4"> <%= text_field_tag :location, nil, class: 'custom-text-field' %> </div>
             <div class="avatar-overlap-group-wrapper">
-              <%= submit_tag 'INVADE', id: 'submit-button', class: 'invade_button' %>
+            <% end %>
+              <%= form_tag '/avatar_invasion', method: 'get' do %>
+                <div class="avatar-overlap-group-wrapper">
+                  <%= submit_tag 'INVADE', id: 'submit-button', class: 'invade_button' %>
+                </div>
+              </form> 
+              <%# it redirects to game page ready to invade %>
               <% end %>
             </div>
           </div>

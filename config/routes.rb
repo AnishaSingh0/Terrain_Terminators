@@ -42,4 +42,8 @@ Rails.application.routes.draw do
   get "avatar"=> "users#get_avatars"
   post "avatar", to: "avatar#choose_avatar"
   post 'location' , to: 'game#location'
+
+  # game route after avatar invasion:
+  get '/avatar_invasion', to: 'avatar#avatar_invasion'
+
 end
