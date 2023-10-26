@@ -7,7 +7,7 @@ gem 'rails', '~> 7.1'
 # Use postgresql as the database for Active Record
 
 # Use Puma as the app server
-gem 'puma', '~> 4.3.11'
+gem 'puma', '~> 3.12.6'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
