@@ -4,6 +4,11 @@
     <div class="avatar-overlap-wrapper">
       <div class="avatar-overlap">
         <div class="avatar-frame">
+          <div class="avatar-frame-2">
+            <div class="avatar-text-wrapper-2">ENTER TARGET</div>
+            <%= form_tag '/location' do  %>
+            <div class="avatar-group-4"> <%= text_field_tag :location, nil, class: 'custom-text-field' %> </div>
+          </div>
           <div class="avatar-text-wrapper">CHOOSE YOUR LIFEFORM</div>
           <div class="avatar-div">
 
@@ -30,16 +35,11 @@
           <% end %>
 
           </div>
-          
-          <div class="avatar-frame-2">
-            <div class="avatar-text-wrapper-2">ENTER TARGET</div>
-            <%= form_tag '/location' do  %>
-            <div class="avatar-group-4"> <%= text_field_tag :location, nil, class: 'custom-text-field' %> </div>
-            <div class="avatar-overlap-group-wrapper">
-              <%= submit_tag 'INVADE', id: 'submit-button', class: 'invade_button' %>
-              <% end %>
-            </div>
-          </div>
+          <div class="avatar-overlap-group-wrapper">
+          <%= submit_tag 'INVADE', id: 'submit-button', class: 'invade_button' %>
+          <% end %>
+        </div>
+
         </div>
       </div>
     </div>
