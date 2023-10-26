@@ -6,7 +6,7 @@ class GameController < ApplicationController
     # GET /game
     def index
         @user = current_user # Fetch the user based on the provided user_id parameter
-        @user_squares = UserSquare.where(user_id: @user.id).order(:square_id)
+        @user_squares = UserSquare.where(user_id: @user.id).order(:square_id).limit(12)
         p @user_squares
         render "index"
     end
