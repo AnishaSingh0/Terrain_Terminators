@@ -10,29 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_26_093811) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_26_120444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "squares", id: :serial, force: :cascade do |t|
-    t.float "lng"
-    t.float "lat"
-    t.timestamptz "created_at"
-    t.timestamptz "updated_at"
-    t.string "image_url"
-    t.string "words"
-  end
-
-  create_table "user_squares", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "square_id"
-    t.string "remaining_words"
+  create_table "avatars", force: :cascade do |t|
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "squares", force: :cascade do |t|
+    t.float "lng"
+    t.float "lat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_url"
+    t.string "words"
+    t.string "remaining_words"
+  end
+
+  create_table "user_squares", id: :serial, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "square_id", null: false
+    t.string "remaining_words"
     t.string "image_path"
     t.boolean "is_destroyed", default: false
-    t.index ["square_id"], name: "index_user_squares_on_square_id"
-    t.index ["user_id"], name: "index_user_squares_on_user_id"
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,11 +50,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_26_093811) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "avatar"
+    t.bigint "avatar_id"
     t.string "avatar_file"
+    t.index ["avatar_id"], name: "index_users_on_avatar_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "user_squares", "squares"
-  add_foreign_key "user_squares", "users"
+  add_foreign_key "user_squares", "squares", name: "user_squares_square_id_fkey"
+  add_foreign_key "user_squares", "users", name: "user_squares_user_id_fkey"
+  add_foreign_key "users", "avatars"
 end
