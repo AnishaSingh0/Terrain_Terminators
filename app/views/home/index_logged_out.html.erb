@@ -1,23 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-</head>
 <body>
-    <div>
-      <!-- Page header -->
-      <h1 class="title">Terrain Terminators</h1>
-      <h1 class="subtitle">Destroy the Earth</h1>
+<div class="home-macbook-pro">
+  <div class="home-frame-wrapper">
+    <div class="home-frame">
+      <div class="home-overlap-wrapper">
+        <div class="home-overlap">
+          <div class="home-rectangle"></div>
+          <div class="home-terrain-terminator">TERRAIN TERMINATOR</div>
+          <%= image_tag "terrain-terminator-logos-white-1-1.png", class:"home-img"%>
+          <div class="home-div">
+            <div class="home-group">
+              <div class="home-overlap-group">
+              <%= link_to "REGISTER", new_user_registration_path, class: "button" %>
+              </div>
+            </div>
+            <div class="home-group">
+              <%= link_to "SIGN IN", new_user_session_path, class: "button" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <!-- Sign in link -->
-      <%= link_to "SIGN IN", new_user_session_path, class: "sign-in-button" %>
-    </div>
-
-    <div>
-      <!-- Sign up link -->
-      <%= link_to "REGISTER", new_user_registration_path, class: "register-button" %>
-    </div>
+  </div>
+</div>
 </body>
 </html>
+
+<style>
+
+.button {
+  background-color: #97b032 !important;
+  color: #16031c !important;
+  border-radius: 20px;
+  padding: 20px !important;
+  font-weight: bold;
+  font-family: "Alegreya Sans", Helvetica;
+  font-size: 20px;
+}
+
+.button:hover {
+  background-color: white !important;
+  cursor: pointer;
+}
+
+</style>
